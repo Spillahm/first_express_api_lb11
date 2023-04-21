@@ -1,8 +1,13 @@
-import Vue from 'vue'
+import { createApp } from 'vue'
 import App from './App.vue'
+import HelloAPI from '@/services/HelloAPI'
 
-Vue.config.productionTip = false
 
-new Vue({
-  render: h => h(App),
-}).$mount('#app')
+let app = createApp(App)
+
+
+app.config.globalProperties.$hello_api = HelloAPI
+
+app.mount('#app')
+
+
